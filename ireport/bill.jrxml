@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5abe61ed-a239-48bb-a99e-5dbc945900ff">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="New Dataset 2" uuid="b20c3030-7df0-42e2-868d-78cbb6688c8b">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     add_medicine.`id` AS add_medicine_id,
+     add_medicine.`name` AS add_medicine_name,
+     add_medicine.`TYPE` AS add_medicine_TYPE,
+     add_medicine.`QUANTITY` AS add_medicine_QUANTITY,
+     add_medicine.`M_DATE` AS add_medicine_M_DATE,
+     add_medicine.`E_DATE` AS add_medicine_E_DATE,
+     add_medicine.`C_NAME` AS add_medicine_C_NAME,
+     add_medicine.`MRP` AS add_medicine_MRP,
+     add_medicine.`Q_TYPE` AS add_medicine_Q_TYPE,
+     add_medicine.`BATCH` AS add_medicine_BATCH
+FROM
+     `add_medicine` add_medicine]]>
+		</queryString>
+		<field name="add_medicine_id" class="java.lang.Integer"/>
+		<field name="add_medicine_name" class="java.lang.String"/>
+		<field name="add_medicine_TYPE" class="java.lang.String"/>
+		<field name="add_medicine_QUANTITY" class="java.lang.Integer"/>
+		<field name="add_medicine_M_DATE" class="java.lang.String"/>
+		<field name="add_medicine_E_DATE" class="java.lang.String"/>
+		<field name="add_medicine_C_NAME" class="java.lang.String"/>
+		<field name="add_medicine_MRP" class="java.lang.Integer"/>
+		<field name="add_medicine_Q_TYPE" class="java.lang.String"/>
+		<field name="add_medicine_BATCH" class="java.lang.String"/>
+		<group name="add_medicine_id">
+			<groupExpression><![CDATA[$F{add_medicine_id}]]></groupExpression>
+		</group>
+		<group name="add_medicine_name">
+			<groupExpression><![CDATA[$F{add_medicine_name}]]></groupExpression>
+		</group>
+		<group name="add_medicine_TYPE">
+			<groupExpression><![CDATA[$F{add_medicine_TYPE}]]></groupExpression>
+		</group>
+		<group name="add_medicine_QUANTITY">
+			<groupExpression><![CDATA[$F{add_medicine_QUANTITY}]]></groupExpression>
+		</group>
+	</subDataset>
+	<field name="field1" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="61" y="2" width="100" height="20" uuid="50c98fb4-43ee-407e-876f-eb2de2224e68"/>
+				<text><![CDATA[add_medicine_name]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="61" y="31" width="100" height="20" uuid="3b785890-a8ce-466b-99cf-9432e3255dbf"/>
+				<textFieldExpression><![CDATA[$F{add_medicine_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
